@@ -16,3 +16,7 @@ This is a simple example application that has (Remote) EJB for Customer entities
  * start the server module with **mvn tomee:run** from the module root or by deploying the server module manually to TomEE server configured in you IDE.
  * Web UI is then available at **http://localhost:8080/server-1.0-SNAPSHOT/**
  * The Swing UI can be launched directly from IDE by executing main method from SwingApplication class in desktop module. **Note: the server needs to be running**.
+
+### Credits
+
+This is a fork of https://github.com/mstahv/ejb-swing-vaadin-crud and the example was originally provided by Matti Tahvonen as an example migration from Swing to Vaadin 7 using more advanced concepts
