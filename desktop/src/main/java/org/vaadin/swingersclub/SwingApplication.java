@@ -46,11 +46,6 @@ public class SwingApplication extends JFrame {
 
     private CustomerFacadeRemote customerFacade;
 
-    public static void main(String args[]) {
-        new SwingApplication().createUI();
-        
-    }
-
     void deselect() {
         table.getSelectionModel().clearSelection();
     }
@@ -91,6 +86,10 @@ public class SwingApplication extends JFrame {
 
     }
 
+    public static void main(String args[]) {
+        new SwingApplication().createUI();
+    }
+
     private void createUI() {
         final BorderLayout borderLayout = new BorderLayout(10, 10);
         setLayout(borderLayout);
@@ -124,20 +123,15 @@ public class SwingApplication extends JFrame {
                     }
                 });
         add(new JScrollPane(table), BorderLayout.CENTER);
-
         add(form, BorderLayout.PAGE_END);
 
         refreshData();
-
         setSize(640, 400);
-
         setVisible(true);
     }
 
     protected void refreshData() {
         customers = getCustomerFacade().findAll();
-        // Manual style, almost like IndexexCotainer or custom Container 
-        // in vaadin, see impl.
         table.setModel(new CustomerTableModel());
         countLabel.setText("Customers in DB: " + customers.size());
     }

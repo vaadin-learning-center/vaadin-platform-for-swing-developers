@@ -31,9 +31,9 @@ public class CustomerForm extends JPanel implements ActionListener {
 
         setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 
-        addWithCaption("First name:", firstName);
-        addWithCaption("Last name:", lastName);
-        addWithCaption("Email:",  email);
+        addWithCaption(firstName, "First name:");
+        addWithCaption(lastName, "Last name:");
+        addWithCaption(email, "Email:");
 
         final Box actionButtons = Box.createHorizontalBox();
 
@@ -48,9 +48,6 @@ public class CustomerForm extends JPanel implements ActionListener {
         delete.addActionListener(this);
 
         updateButtonStates();
-
-        setVisible(true);
-
     }
 
     @Override
@@ -94,7 +91,7 @@ public class CustomerForm extends JPanel implements ActionListener {
         create.setEnabled(editedCustomer == null);
     }
 
-    private void addWithCaption(String caption, JTextField f) {
+    private void addWithCaption(JTextField f, String caption) {
         Box box = Box.createHorizontalBox();
         box.add(new JLabel(caption));
         box.add(Box.createHorizontalGlue());
