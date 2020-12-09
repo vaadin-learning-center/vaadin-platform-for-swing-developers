@@ -11,6 +11,7 @@ This is a simple example application that has (Remote) EJB for Customer entities
 
 ### To play with the demo:
 
+ * Use Java 8 to run the demo
  * build from top level with **mvn install**
  * import the project to your IDE and make one top level build
  * start the server module with **mvn tomee:run** from the module root or by deploying the server module manually to TomEE server configured in you IDE.
